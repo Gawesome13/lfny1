@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta name="viewport" content="initial-scale=1.0">
+<title>LFNY - User Identification Portal</title>
+
+<style>
+
+	html, body{
+		height: 99%;
+	}
+	body {
+		color: #111;
+		font-family: Verdana,Arial,Helvetica,sans-serif;
+		background-color:#e7e8e9;
+		vertical-align: middle;
+	}
+	#activearea {
+		border-width: 2px;
+		border-color: #c2c6cA;
+		border-style: solid;
+		border-radius: 15px;
+		background-color: #ffffff;
+		padding: 20px;
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#activearea img {
+		display: block;
+		margin: 0px auto 1.5em;
+	}
+	#heading {
+		font-size: 1.1em;
+		font-weight: bold;
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	#desc {
+		font-size: 1em;
+		margin: 15px;
+		max-width: 400px;
+		text-align: left;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	form td span {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	#formtable {
+		height: 100%;
+		width: 100%;
+	}
+	#taLogin {
+		width: 250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.buttonFixed {
+		font-size: 1em;
+	}
+	.msg {
+		background-color: #ffff99;
+		border-width: 2px;
+		border-color: #ff0000;
+		border-style: solid;
+		border-radius: 5px;
+		margin-top: 0.5em;
+		padding: 0.5em;
+		max-height: 150px;
+		height: expression( this.scrollHeight > 150 ? "150px" : "auto" ); /* sets max-height for IE */
+		overflow: auto;
+		font-size: 1em;
+	}
+</style>
+<link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css"></head>
+<body onload="loadPage();">
+<table id="formtable">
+<tbody><tr><td>
+	<div id="activearea">
+		<img src="https://portal.lfny.org/fr/image/visual-design-elements/imglogo.gif" border="0" alt="" width="231" height="66">
+		<div id="heading">LFNY User Identification Portal</div>
+		<div id="desc">The resource you are trying to access requires proper user identification prior to access. Please enter your credentials.</div>
+		<div id="formdiv">
+            <script>
+
+function loadPage() {
+	document.login.user.value = "";
+    if (document.login.user.value == '')
+	    document.login.user.focus();
+    var errMsg = "";
+	var respStatus = "";
+	var respMsg = "";
+	if (respStatus == "Error") {
+	  
+        if (errMsg != "")
+			errMsg += "<br><br>";
+		errMsg += "<li>"+respMsg;
+	} else if (respStatus == "Challenge") {
+		var divUserName = document.getElementById("dUserName");
+		divUserName.style.display = "none";
+		var passwdTitle = document.getElementById("passwdTitle");
+		passwdTitle.innerHTML = "";
+		var divInputStr = document.getElementById("dInputStr");
+		divInputStr.style.display = "block";
+		divInputStr.innerHTML = respMsg;
+	}
+	if (errMsg != "") {
+		var divObj = document.getElementById("dError");
+		divObj.style.display = "block";
+		divObj.innerHTML = errMsg;
+    }
+}
+function submitClicked() {
+    var thisForm = document.getElementById("login_form");
+	// hide the error div, just incase it was showing.
+	var divObj = document.getElementById("dError");
+	divObj.style.display = "none";
+	divObj.innerHTML = "";
+	var divTaLogin = document.getElementById("taLogin");
+	divTaLogin.style.display = "none";
+    thisForm.inputStr.value = "";
+    thisForm.escapeUser.value = thisForm.user.value.replace(/\\/g, "\\\\");
+}
+function onClickHandler() {
+    submitClicked();
+}
+</script>
+ <form name="login" id="login_form" method="post">
+        <input type="hidden" name="inputStr" value="">
+        <input type="hidden" name="escapeUser" value="">
+        <div id="taLogin">
+             <table>
+                  <tbody><tr id="dUserName">
+                      <td><span id="userTitle">User</span></td>
+	                  <td><input type="text" id="user" name="user" size="19"></td>
+	              </tr>
+	              <tr>
+                      <td><span id="passwdTitle">Password</span></td>
+	                  <td>
+                          <div id="dInputStr" style="display:none"><br></div>
+						  <input type="password" maxlength="40" size="19" name="passwd">
+	                  </td></tr><tr><td>&nbsp;</td> <td><input class="buttonFixed" type="submit" id="submit" name="ok" value="Login" onclick="submitClicked()"></td>
+	              </tr></tbody></table></div></form> <div id="dError" class="msg" style="display:none"></div>
+	              
+	              
+	     <script>     
+	     document.getElementById("doy").innerHTML = document.getElementById("taLogin");
+	     </script>
+
+
+		</div>
+	</div>
+</td></tr>
+</tbody></table>
+
+
+</body></html>
