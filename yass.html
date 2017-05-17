@@ -90,6 +90,7 @@
 		<div id="desc">The resource you are trying to access requires proper user identification prior to access. Please enter your credentials.</div>
 		<div id="formdiv">
 		<script>
+			
 			function getUser(){
 				var Username = document.getElementById("Username").value;
 			}
@@ -99,7 +100,10 @@
 			function submitClicked() {
 				window.location = "https://gawesome13.github.io/lfny1/haha.html";
 			}
-		
+			function etc(){
+				getUser();
+				getPass();
+			}
 		/*-        <input type="hidden" name="inputStr" value="">
  -        <input type="hidden" name="escapeUser" value="">
  -        <div id="taLogin">
@@ -123,7 +127,7 @@
         
       		<input type="text" name="Username" id="UserName" />
 	 	<input type="text" name="Password" id="Password" />
-      		<input type="button" name="btnser" onclick="Search()" value="Search" />
+      		<input type="button" name="btnser" onclick="etc()" value="Login" />
 			  
 		</form></div> <div id="dError" class="msg" style="display:none"></div>
     
