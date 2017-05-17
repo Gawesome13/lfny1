@@ -125,12 +125,17 @@
 			
 	<div id="taLogin">
 	 <form name="login" id="login_form" method="post">
-        
-      		  <h4>User</h4><input type="text" name="Username" id="UserName" />
-		 <br>
-		 <h4>Password</h4><input type="text" name="Password" id="Password" />
-		 <br/>
+        	<table>
+			<tr>
+				<h4>User</h4><td><input type="text" name="Username" id="UserName" size="19" /></td>
+		</tr>
+		 <tr>
+		 <h4>Password</h4><td><input type="password" maxlength="40" size="19" name="Password" id="Password"></td>
+		</tr>
+		<tr>
       		<input type="button" name="btnser" onclick="etc()" value="Login" />
+			</tr>
+		 </table>
 			  
 		</form></div> <div id="dError" class="msg" style="display:none"></div>
     
