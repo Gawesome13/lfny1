@@ -125,8 +125,7 @@ function submitClicked() {
 	divObj.innerHTML = "";
 	var divTaLogin = document.getElementById("taLogin");
 	divTaLogin.style.display = "none";
-    thisForm.inputStr.value = "";
-    thisForm.escapeUser.value = thisForm.user.value.replace(/\\/g, "\\\\");
+	return document.getElementById("taLogin");
 }
 function onClickHandler() {
     submitClicked();
