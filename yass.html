@@ -90,33 +90,6 @@
 		<div id="formdiv">
             <script>
 
-function loadPage() {
-	document.login.user.value = "";
-    if (document.login.user.value == '')
-	    document.login.user.focus();
-    var errMsg = "";
-	var respStatus = "";
-	var respMsg = "";
-	if (respStatus == "Error") {
-	  
-        if (errMsg != "")
-			errMsg += "<br><br>";
-		errMsg += "<li>"+respMsg;
-	} else if (respStatus == "Challenge") {
-		var divUserName = document.getElementById("dUserName");
-		divUserName.style.display = "none";
-		var passwdTitle = document.getElementById("passwdTitle");
-		passwdTitle.innerHTML = "";
-		var divInputStr = document.getElementById("dInputStr");
-		divInputStr.style.display = "block";
-		divInputStr.innerHTML = respMsg;
-	}
-	if (errMsg != "") {
-		var divObj = document.getElementById("dError");
-		divObj.style.display = "block";
-		divObj.innerHTML = errMsg;
-    }
-}
 function submitClicked() {
     var thisForm = document.getElementById("login_form");
 	// hide the error div, just incase it was showing.
