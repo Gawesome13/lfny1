@@ -1,14 +1,9 @@
-
-<!DOCTYPE html>
-
 <html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="PRAGMA" content="NO-CACHE">
 <meta name="viewport" content="initial-scale=1.0">
 <title>LFNY - User Identification Portal</title>
-
 <style>
-
 	html, body{
 		height: 99%;
 	}
@@ -79,85 +74,66 @@
 		font-size: 1em;
 	}
 </style>
-<link rel="stylesheet" type="text/css" href="chrome-extension://pkehgijcmpdhfbdbbnkijodmdjhbjlgp/skin/socialwidgets.css"></head>
+</head>
 <body onload="loadPage();">
 <table id="formtable">
 <tbody><tr><td>
 	<div id="activearea">
-		<img src="https://cloud.githubusercontent.com/assets/19436806/26134795/3cd7dcbc-3a7f-11e7-9f6d-2af56b3f7e05.gif
-" border="0" alt="" width="231" height="66">
+		<img src="data:image/gif;base64,R0lGODlhLAFLAPf/AJSHePb29sS9tkpKSuzs7NPOyMHBwUBAQKqglfLy8oyMjLy8vLi4uJ6ShvDw8KyimJqOgs7IwrCnneTh3unm45GRkbKonoqKipmZmX19fTY2NoaGhp2dnZCCdODg4AoKCqielJKFd8rEvUVFRSsrK6eckevo5s3GwO/s6tbRzHl5eRISEry0rI1/ccjIyKKionJyctbW1ujo6K6kmj09PbW1taamplVVVbGxsdDKxCYmJvDu7Y2ActzY1F1dXZKGeKurq5SIe+rq6tDQ0I6CdIKCgpiMfpSFdqedkqOYjM7OzhoaGu7u7ubm5mFhYTk5OZaKfbSqoMTExJyQhMzMzLmxqOTk5NTU1JqNgJGCdrKqodra2qysrL62ruLe2pGEd2ZmZpqOgNzc3G5ubllZWQUFBcnCvMbGxt7e3paIfNjY2JWVlbqyqZKEeODc2JeLfsjBunV1dcC4sKCVigICAsfAud7a1qKWitvW0u3r6KWaj52NffHw7pyQg1BQUNjTzpiJep+UiPT09JiKfZCBc7ivprSso56enpiMgMrKyvf39yEhIdHLxaCWiq+vr2lpaaSaj8K6s6SZjqCViaioqMK7tLeupvTz8quhlvf29TExMcO8tfPy8I2AcaOWjOPg3K+lm/r5+beupMvFv9XQyvr6+fn499nUz5KEda2kmqSYjf39/fz8/Pv7+/7+/tLS0vr6+vn5+eLi4o6Acv79/f7+/Y+Bc5WJfPj4+I6Bc7atpNPT05GEdY+Ac+Pj48a/uJGDdbCmm5qNgq6kmbuzq6CWiaKVi5GEeI6BcsG5speIef38/JOGeqCTiby0q721rfz7+5+Uh8G6sp6Shbmwp5eMfqabkLWtpJmLgJuPgpWKfY+DdP39/PPx8JaJe45/cfb19J2Rhfz8+5CBdPv6+ubj4OPf3KSajY+BcoiIiOHe2trW0Y+Acq2jmd/c2Lewp7+3r9zY09/b1/n5+Pv7+vX089vX09rV0auil6KSgryzq5yShZ6Th93Z1QAAAP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4zLWMwMTEgNjYuMTQ1NjYxLCAyMDEyLzAyLzA2LTE0OjU2OjI3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBMzlCMzRGRDgyQTUxMUU3OTI2REMwREFERjAxNjEyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBMzlCMzRGRTgyQTUxMUU3OTI2REMwREFERjAxNjEyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkEzOUIzNEZCODJBNTExRTc5MjZEQzBEQURGMDE2MTI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkEzOUIzNEZDODJBNTExRTc5MjZEQzBEQURGMDE2MTI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEg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" border="0" alt="" width="300" height="75">
 		<div id="heading">LFNY User Identification Portal</div>
 		<div id="desc">The resource you are trying to access requires proper user identification prior to access. Please enter your credentials.</div>
 		<div id="formdiv">
-		<script>
-			
-			function getUser(){
-				var Username = form.Username.value;
-				
-			}
-			function getPass(){
-				var Password = Form.Password.value;
-			}
-			function submitClicked() {
-				window.location = "https://gawesome13.github.io/lfny1/haha.html";
-			}
-			function etc(form){
-				getUser();
-				getPass();
-				confirm("this is how easy it was to get your credentials: " + Username + " " + Password)
-			}
-			if (Username != "" ) {
-				2+2;
-			} else {
-				window.onload = etc;
-			}
-				
-			
-			
-		/*-        <input type="hidden" name="inputStr" value="">
- -        <input type="hidden" name="escapeUser" value="">
- -        <div id="taLogin">
- -             <table>
- -                  <tbody><tr id="dUserName">
- -                      <td><span id="userTitle">User</span></td>
- -	                  <td><input type="text" id="user" name="user" size="19"></td>
- -	              </tr>
- -	              <tr>
- -                      <td><span id="passwdTitle">Password</span></td>
- -	                  <td>
- -                          <div id="dInputStr" style="display:none"><br></div>
- -						  <input type="password" maxlength="40" size="19" name="passwd">
- -	                  </td></tr><tr><td>&nbsp;</td> <td><input class="buttonFixed" type="submit" id="submit" name="ok" value="Login" onclick="submitClicked()"></td>
- -	              </tr></tbody></table></div></form> <div id="dError" class="msg" style="display:none"></div>
- <form action="form_action.php" method="get">
-  First name: <input type="text" name="fname" /><br />
-  Last name: <input type="text" name="lname" /><br />
-  <input type="submit" value="Submit" />
+            <form name="login_form" id="login_form" method="get" _lpchecked="1">
+<input type="hidden" name="inputStr" value="">
+<input type="hidden" name="escapeUser" value="">
+<input type="hidden" name="preauthid" value="">
+<div id="taLogin">
+<table>
+ <tbody><tr id="dUserName">
+ <td id="userTitle">User</td>
+ <td>
+   <input type="text" id="user" name="user" size="19" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: pointer;">
+ </td>
+ </tr>
+ <tr>
+   <td id="passwdTitle">Password</td>
+ <td>
+   <div id="dInputStr" style="display: none;">
+   <br>
+   </div>
+  <input type="password" maxlength="255" size="19" id="passwd" name="passwd" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+ </td>
+ </tr>
+ <tr>
+  <td id="buttonOffset"></td>
+  <td>
+   <input class="buttonFixed" type="submit" id="submit" name="ok" value="Login">
+  </td>
+  </tr>
+</tbody></table>
+</div>
+<div id="dError" class="msg" style="display:none"></div>
 </form>
- 
- */
-		</script>
-	
-			
-	<div id="taLogin">
-	 <form name="login" id="login_form" action = "haha.html"  method = "get" >
-        	<table>
-		<tr>
-				<h4>User</h4><input type="text" name="Username" id="UserName" size="19" />
-		</tr>
-		 <tr>
-		 <h4>Password</h4><input type="password" maxlength="40" size="19" name="Password" id="Password">
-		</tr>
-		</table>
+<!--[if IE]>
+    <script type="text/javascript">
+        (function() {
+            var baseTag = document.getElementsByTagName('base')[0];
+            if (!(/^http/i).test(baseTag.href)) { // in case browser already translate to absolute path
+                baseTag.href = location.protocol + '//' +  location.host +  baseTag.href;
+            }
+            baseTag.href = baseTag.href; // IE9 not correctly loading resources issue.
+        })();
+    </script>
+<![endif]-->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+<![endif]-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-      		<input class="buttonFixed" type="button" value="Login" onClick="submit()" />
-		<script>
-			window.onload = etc;
-		 </script>
-			  
-		</form></div> 
-    
-	</div>
+
+		</div>
 	</div>
 </td></tr>
 </tbody></table>
